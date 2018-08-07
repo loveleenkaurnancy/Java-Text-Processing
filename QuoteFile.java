@@ -58,7 +58,7 @@ public class QuoteFile {
     //#region Find nth line quote from file
     public String retrieveQuote(int num){
         try{
-            num = num-1;
+            num = (num-1)*2;
             String line = Files.readAllLines(Paths.get("favorite.txt")).get(num);
             return line;
         }catch(IOException e){

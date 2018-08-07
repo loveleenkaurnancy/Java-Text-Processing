@@ -52,7 +52,7 @@ public class QuoteApp {
 
             // #region Reading nth number of text from file
             Scanner in = new Scanner(System.in);
-            System.out.print("Input a number: ");
+            System.out.print("Input a quote number: ");
             int n = in.nextInt();
             retrieveQuote(n);
             // #endregion
