@@ -45,6 +45,7 @@ public class QuoteFile {
         try {
             FileWriter fw = new FileWriter(file, true);
             BufferedWriter bw = new BufferedWriter(fw);
+            bw.write("\r\n");
             bw.write(filedata);
             bw.newLine();
             bw.close();
@@ -53,7 +54,7 @@ public class QuoteFile {
             e.printStackTrace();
         }
     }
-    //#endregion
+    //#endregionaddEntry
     //#region Find nth line quote from file
     public String retrieveQuote(int num){
         try{

@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.io.*;
 import java.util.*;
+import java.util.Scanner;
 
 public class QuoteApp {
     public static void main(String[] args) {
@@ -9,6 +10,8 @@ public class QuoteApp {
         // need here. You have freedom as to how you want to
         // interact with the user.
         // The name of the file to open.
+
+        Scanner input = new Scanner(System.in);
 
         String fileName = "favorite.txt";
 
@@ -42,7 +45,8 @@ public class QuoteApp {
             // #endregion
 
             // #region calling method for Adding Quotes to file
-            String data = "A quick brown fox jump over the lazy dog";
+            System.out.println("Enter Quote " );
+            String data = input.next();
             AddQuotesToFile(fileName, data);
             // #endregion
 
