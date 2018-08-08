@@ -32,7 +32,7 @@ public class QuoteFile {
                 }
             }
             reader.close();
-            return lines;
+            return lines/2;
         } catch (IOException e) {
             e.printStackTrace();
             return 0;
@@ -45,7 +45,7 @@ public class QuoteFile {
         try {
             FileWriter fw = new FileWriter(file, true);
             BufferedWriter bw = new BufferedWriter(fw);
-            bw.write("\r\n");
+            bw.write("\r");
             bw.write(filedata);
             bw.newLine();
             bw.close();
@@ -55,11 +55,27 @@ public class QuoteFile {
         }
     }
     //#endregionaddEntry
+
+    //#region Adding new quotation entry to the bottom ofthe text file in the same format 
+    public void addAuthor() {
+        try {
+            FileWriter fw = new FileWriter(file, true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write("-- "+filedata);
+            bw.newLine();
+            bw.close();
+            // Files.write(Paths.get(file), filedata.getBytes());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    //#endregionaddEntry
+
     //#region Find nth line quote from file
     public String retrieveQuote(int num){
         try{
-            num = (num-1)*2;
-            String line = Files.readAllLines(Paths.get("favorite.txt")).get(num);
+            num = (num-1)*3;
+            String line = Files.readAllLines(Paths.get("files/quotes.txt")).get(num);
             return line;
         }catch(IOException e){
             e.printStackTrace();
@@ -68,4 +84,27 @@ public class QuoteFile {
         
     }
     //#endregion
+
+
+
+    //#region Searching Word 
+    public String quoteSearch(String search, int i) {
+
+        try{
+            i = (i-1)*3;
+            String line = Files.readAllLines(Paths.get("files/quotes.txt")).get(i);
+            int intIndex = line.indexOf(search);
+            if(intIndex == - 1) {
+                return " ";
+            } else {
+                 return line;
+            }
+
+        }catch(IOException e){
+            e.printStackTrace();
+            return "Something went wrong";
+        }
+       
+    }
+    //#endregionsearchword
 }

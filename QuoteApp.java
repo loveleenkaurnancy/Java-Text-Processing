@@ -13,7 +13,7 @@ public class QuoteApp {
 
         Scanner input = new Scanner(System.in);
 
-        String fileName = "favorite.txt";
+        String fileName = "files/quotes.txt";
 
         // This will reference one line at a time
         String line = null;
@@ -32,7 +32,7 @@ public class QuoteApp {
                 System.out.println(line);
 
             }
-            System.out.println("*****End of Quotes*****");
+            System.out.println("\n*****End of Quotes*****");
             // Always close files.
             bufferedReader.close();
             // #endregion
@@ -45,17 +45,30 @@ public class QuoteApp {
             // #endregion
 
             // #region calling method for Adding Quotes to file
-            System.out.println("Enter Quote " );
+            System.out.println("\nEnter Quote " );
             String data = input.next();
             AddQuotesToFile(fileName, data);
             // #endregion
 
+            // #region calling method for Adding Quotes to file
+            System.out.println("\nEnter Author " );
+            String data2 = input.next();
+            AddAuthorToFile(fileName, data2);
+            // #endregion
+
             // #region Reading nth number of text from file
             Scanner in = new Scanner(System.in);
-            System.out.print("Input a quote number: ");
+            System.out.print("\nInput a quote number: ");
             int n = in.nextInt();
             retrieveQuote(n);
             // #endregion
+
+            // // #region Reading nth number of text from file
+            System.out.println("");
+            System.out.print("Enter word to search: ");
+            String search = in.next();
+            searchQuote(search);
+            // // #endregion
 
         } catch (FileNotFoundException ex) {
             System.out.println("Unable to open file '" + fileName + "'");
@@ -72,6 +85,13 @@ public class QuoteApp {
         myQuoteFile.addEntry();
     }
 
+
+    // #region Method for Adding Authirs To the file
+    static void AddAuthorToFile(String filename, String data) {
+        QuoteFile myQuoteFile = new QuoteFile(data, filename);
+        myQuoteFile.addAuthor();
+    }
+
     // #endregion
     static void retrieveQuote(int num) {
 
@@ -82,4 +102,28 @@ public class QuoteApp {
     }
 
     // Write your aux methods here:
+
+    static void searchQuote(String search) {
+        String fileName = "files/quotes.txt";
+
+        QuoteFile myQuoteFile2 = new QuoteFile(fileName);
+        int count = myQuoteFile2.countQuotes();
+
+        for(int i=1;i<=count;i++)
+        {
+            QuoteFile myQuoteFile = new QuoteFile();
+            String getQuote = myQuoteFile.quoteSearch(search,i);
+            
+            if(getQuote.equals(" "))
+            {
+                System.out.print(" ");
+            }
+            else
+            {
+                System.out.println("");
+                System.out.println("Quote is : " + getQuote);
+            }
+        }    
+            
+    }
 }
