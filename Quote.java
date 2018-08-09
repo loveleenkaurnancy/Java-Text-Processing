@@ -101,6 +101,12 @@ public class Quote
     {
         return line;
     }
+
+
+    public String saveToFave(String line)
+    {
+        return line;
+    }
     
 
     //...

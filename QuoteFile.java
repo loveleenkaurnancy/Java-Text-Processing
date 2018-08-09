@@ -83,6 +83,16 @@ public class QuoteFile {
             Quote myAuthor = new Quote();
             String author = myAuthor.getCredit(authorLine);
 
+
+            String fname="favorite.txt";
+
+            FileWriter fw = new FileWriter(fname, true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write("\r\n");
+            bw.write(quote);
+            bw.newLine();
+            bw.close();
+
             int count = myQuote.getWordCount();
 
             String random=myQuote.scramblerGame();
@@ -190,4 +200,5 @@ public class QuoteFile {
         }
 
     }
+
 }
