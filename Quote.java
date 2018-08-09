@@ -5,6 +5,11 @@ public class Quote
     private int count;
     // 
 
+    public Quote()
+    {
+        
+    }
+
     public Quote(String q)
     {
         quote = q;
@@ -14,6 +19,11 @@ public class Quote
     String getQuote()
     {
         return quote;
+    }
+
+    String getCredit(String author)
+    {
+        return author;
     }
     
 

@@ -77,8 +77,15 @@ public class QuoteFile {
             num = (num-1)*3;
             String line = Files.readAllLines(Paths.get("files/quotes.txt")).get(num);
             Quote myQuote = new Quote(line);
-            String line2 = myQuote.getQuote();
-            return line2;
+            String quote = myQuote.getQuote();
+
+            String authorLine = Files.readAllLines(Paths.get("files/quotes.txt")).get(num+1);
+            Quote myAuthor = new Quote();
+            String author = myAuthor.getCredit(authorLine);
+
+            String doc = quote + "\n\nAuthor is " + author;
+
+            return doc;
         }catch(IOException e){
             e.printStackTrace();
             return "Something went wrong";
