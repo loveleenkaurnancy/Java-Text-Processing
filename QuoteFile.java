@@ -132,6 +132,7 @@ public class QuoteFile {
                 System.out.println("Wrong Guess");
             }
 
+
             String doc = quote + "\n\nAuthor is " + author + "\n\nNumber of words in quotes are " + count;
 
             return doc;
@@ -165,4 +166,28 @@ public class QuoteFile {
        
     }
     //#endregionsearchword
+
+    public String wordSearch(String search, int i)
+    {
+        try{
+            i = (i-1)*3;
+            
+            String line = Files.readAllLines(Paths.get("files/dictionary.txt")).get(i);
+
+            Quote q=new Quote();
+            String line2= q.defineWords(line);
+            String meaning = Files.readAllLines(Paths.get("files/dictionary.txt")).get(i+1);
+            int intIndex = line.indexOf(search);
+            if(intIndex == - 1) {
+                return " ";
+            } else {
+                 return meaning;
+            }
+
+        }catch(IOException e){
+            e.printStackTrace();
+            return "Something went wrong";
+        }
+
+    }
 }

@@ -96,6 +96,11 @@ public class Quote
         String replaceString=quote.replaceAll("a"," _");
         return replaceString;
     }
+
+    public String defineWords(String line)
+    {
+        return line;
+    }
     
 
     //...

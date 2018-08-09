@@ -71,7 +71,15 @@ public class QuoteApp {
             searchQuote(search);
             // #endregion
 
-            
+
+            // #region Reading nth number of text from file
+            System.out.println("");
+            System.out.print("Enter word to find the meaning: ");
+            String search2 = in.next();
+            searchWord(search2);
+            // #endregion
+
+
 
         } catch (FileNotFoundException ex) {
             System.out.println("Unable to open file '" + fileName + "'");
@@ -125,6 +133,33 @@ public class QuoteApp {
             {
                 System.out.println("");
                 System.out.println("Quote is : " + getQuote);
+            }
+        }    
+            
+    }
+
+
+
+
+    static void searchWord(String search) {
+        String fileName = "files/dictionary.txt";
+
+        QuoteFile myQuoteFile2 = new QuoteFile(fileName);
+        int count = myQuoteFile2.countQuotes();
+
+        for(int i=1;i<=count;i++)
+        {
+            QuoteFile myQuoteFile = new QuoteFile();
+            String getQuote = myQuoteFile.wordSearch(search,i);
+            
+            if(getQuote.equals(" "))
+            {
+                System.out.print(" ");
+            }
+            else
+            {
+                System.out.println("");
+                System.out.println("Meaning is : " + getQuote);
             }
         }    
             
