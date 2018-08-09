@@ -1,44 +1,19 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class Quote
+public class String_Mixer
 {
-    private String quote;
-    private int count;
-    // 
+	public static void main(String[] args)
+	{
+		Scanner in=new Scanner(System.in);
+		System.out.println("Please enter a sentence: ");
+		String word=in.nextLine();
+		System.out.println(scramble(word));
+	}
 
-    public Quote()
-    {
-
-    }
-
-    public Quote(String q)
-    {
-        quote = q;
-    }
-
-
-    String getQuote()
-    {
-        return quote;
-    }
-
-    String getCredit(String author)
-    {
-        return author;
-    }
-
-    int getWordCount()
-    {
-        count = quote.length();
-        return count;
-    }
-
-    public String scramblerGame()
-    {
-        String sentence = quote;
-
-        String result  = "";
+	public static String scramble(String sentence)
+	{
+		String result  = "";
 		String[] words = sentence.split(" ");
 		
 		Random generator = new Random();
@@ -82,8 +57,5 @@ public class Quote
 		}
 		
 		return result;
-    }
-    
-
-    //...
+	}
 }

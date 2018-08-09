@@ -85,6 +85,27 @@ public class QuoteFile {
 
             int count = myQuote.getWordCount();
 
+            String random=myQuote.scramblerGame();
+
+
+            System.out.println("Scrambled String\n" + random);
+
+            Scanner input = new Scanner(System.in);
+            System.out.println(" ");
+            System.out.print("Enter right quote \n");
+            String qu = input.nextLine();
+
+            if(quote.equals(qu))
+            {
+                System.out.print("YES");    
+            }
+            else
+            {
+                System.out.print("NO");    
+            }
+
+
+
             String doc = quote + "\n\nAuthor is " + author + "\n\nNumber of words in quotes are " + count;
 
             return doc;

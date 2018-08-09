@@ -102,17 +102,5 @@ We control complexity by building abstractions that hide details when appropriat
 -- b
 ccc
 -- c
-ddd
--- d
-eee
--- e
-fff
--- f
-ggg
--- g
-hhh
--- h
-iii
--- iii
-jjj jjj
--- jjj
+4
+-- vv

@@ -63,12 +63,14 @@ public class QuoteApp {
             retrieveQuote(n);
             // #endregion
 
-            // // #region Reading nth number of text from file
+
+            // #region Reading nth number of text from file
             System.out.println("");
             System.out.print("Enter word to search: ");
             String search = in.next();
             searchQuote(search);
-            // // #endregion
+            // #endregion
+
 
         } catch (FileNotFoundException ex) {
             System.out.println("Unable to open file '" + fileName + "'");
@@ -98,7 +100,7 @@ public class QuoteApp {
         QuoteFile myQuoteFile = new QuoteFile();
         String getQuote = myQuoteFile.retrieveQuote(num);
         System.out.println("\n");
-        System.out.println("Quote is : " + getQuote);
+        System.out.println("Quote iss : " + getQuote);
     }
 
     // Write your aux methods here:
