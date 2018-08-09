@@ -46,13 +46,13 @@ public class QuoteApp {
 
             // #region calling method for Adding Quotes to file
             System.out.println("\nEnter Quote " );
-            String data = input.next();
+            String data = input.nextLine();
             AddQuotesToFile(fileName, data);
             // #endregion
 
             // #region calling method for Adding Quotes to file
             System.out.println("\nEnter Author " );
-            String data2 = input.next();
+            String data2 = input.nextLine();
             AddAuthorToFile(fileName, data2);
             // #endregion
 

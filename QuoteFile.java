@@ -83,7 +83,9 @@ public class QuoteFile {
             Quote myAuthor = new Quote();
             String author = myAuthor.getCredit(authorLine);
 
-            String doc = quote + "\n\nAuthor is " + author;
+            int count = myQuote.getWordCount();
+
+            String doc = quote + "\n\nAuthor is " + author + "\n\nNumber of words in quotes are " + count;
 
             return doc;
         }catch(IOException e){

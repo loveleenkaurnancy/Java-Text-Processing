@@ -7,7 +7,7 @@ public class Quote
 
     public Quote()
     {
-        
+
     }
 
     public Quote(String q)
@@ -24,6 +24,12 @@ public class Quote
     String getCredit(String author)
     {
         return author;
+    }
+
+    int getWordCount()
+    {
+        int count = quote.length();
+        return count;
     }
     
 
