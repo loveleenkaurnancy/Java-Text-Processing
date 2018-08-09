@@ -90,6 +90,12 @@ public class Quote
         String replaceString=quote.replaceAll("is","_ _");
         return replaceString;
     }
+
+    public String tripleX()
+    {
+        String replaceString=quote.replaceAll("a"," _");
+        return replaceString;
+    }
     
 
     //...

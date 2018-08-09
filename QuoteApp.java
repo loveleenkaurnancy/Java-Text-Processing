@@ -71,6 +71,8 @@ public class QuoteApp {
             searchQuote(search);
             // #endregion
 
+            
+
         } catch (FileNotFoundException ex) {
             System.out.println("Unable to open file '" + fileName + "'");
         } catch (IOException ex) {

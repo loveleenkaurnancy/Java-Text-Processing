@@ -118,6 +118,20 @@ public class QuoteFile {
                 System.out.println("Wrong Guess");
             }
 
+
+            System.out.println(q.tripleX());
+
+            String missing1 = input.nextLine();
+
+            if(missing1.equals("a"))
+            {
+                System.out.println("Right Guess");
+            }
+            else
+            {
+                System.out.println("Wrong Guess");
+            }
+
             String doc = quote + "\n\nAuthor is " + author + "\n\nNumber of words in quotes are " + count;
 
             return doc;
