@@ -71,7 +71,6 @@ public class QuoteApp {
             searchQuote(search);
             // #endregion
 
-
         } catch (FileNotFoundException ex) {
             System.out.println("Unable to open file '" + fileName + "'");
         } catch (IOException ex) {
@@ -100,7 +99,7 @@ public class QuoteApp {
         QuoteFile myQuoteFile = new QuoteFile();
         String getQuote = myQuoteFile.retrieveQuote(num);
         System.out.println("\n");
-        System.out.println("Quote iss : " + getQuote);
+        System.out.println("Quote is : " + getQuote);
     }
 
     // Write your aux methods here:

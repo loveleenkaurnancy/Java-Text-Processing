@@ -83,6 +83,13 @@ public class Quote
 		
 		return result;
     }
+
+
+    public String fillBlank()
+    {
+        String replaceString=quote.replaceAll("is","_ _");
+        return replaceString;
+    }
     
 
     //...

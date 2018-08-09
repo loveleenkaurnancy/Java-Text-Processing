@@ -97,14 +97,26 @@ public class QuoteFile {
 
             if(quote.equals(qu))
             {
-                System.out.print("YES");    
+                System.out.print("\nYES\n");    
             }
             else
             {
-                System.out.print("NO");    
+                System.out.print("\nNO\n\n");    
             }
 
 
+            Quote q = new Quote(line);
+            System.out.println(q.fillBlank());
+
+            String missing = input.nextLine();
+            if(missing.equals("is"))
+            {
+                System.out.println("Right Guess");
+            }
+            else
+            {
+                System.out.println("Wrong Guess");
+            }
 
             String doc = quote + "\n\nAuthor is " + author + "\n\nNumber of words in quotes are " + count;
 
