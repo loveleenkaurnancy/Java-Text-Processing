@@ -76,7 +76,9 @@ public class QuoteFile {
         try{
             num = (num-1)*3;
             String line = Files.readAllLines(Paths.get("files/quotes.txt")).get(num);
-            return line;
+            Quote myQuote = new Quote(line);
+            String line2 = myQuote.getQuote();
+            return line2;
         }catch(IOException e){
             e.printStackTrace();
             return "Something went wrong";

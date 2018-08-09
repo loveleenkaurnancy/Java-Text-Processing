@@ -10,5 +10,12 @@ public class Quote
         quote = q;
     }
 
+
+    String getQuote()
+    {
+        return quote;
+    }
+    
+
     //...
 }
